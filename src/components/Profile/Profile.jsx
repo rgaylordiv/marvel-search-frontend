@@ -1,5 +1,5 @@
 import './Profile.css';
-import ComicSection from '../components/ComicSection/ComicSection.jsx';
+import ComicSection from '../ComicSection/ComicSection.jsx';
 
 export default function Profile( isLiked, setIsLiked ) {
     return(

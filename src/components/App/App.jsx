@@ -5,7 +5,7 @@ import Header from '../Header/Header.jsx';
 import Banner from '../Banner/Banner.jsx';
 import Search from '../Search/Search.jsx';
 import Main from '../Main/Main.jsx';
-import Profile from '../../Profile/Profile.jsx';
+import Profile from '../Profile/Profile.jsx';
 import CharacterCard from'../ItemCard/ItemCard.jsx';
 import NavigationPage from '../NavigationPage/NavigationPage.jsx';
 import './App.css'
