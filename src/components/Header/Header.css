@@ -1,0 +1,145 @@
+.header{
+    display: flex;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    justify-content: space-between;
+}
+
+.header__contents{
+    display: flex;
+    flex-direction: row;
+}
+
+.header__link{
+    text-decoration: none;
+}
+
+.header__title{
+    text-decoration: none;
+}
+
+.header__title-name{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+    background: #f3f3f3; /*#f5e960*/
+    /* text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000; */
+    padding: 15px 10px 15px 10px;
+    border: solid 2px black;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.header__nav{
+    display: flex;
+    flex-direction: row;
+}
+
+.header__nav-bar{
+    display: flex;
+    flex-direction: row;
+}
+
+.header__nav-content{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    background: #f3f3f3;
+    padding: 5px 10px 5px 10px;
+    border: solid 2px black;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    cursor: pointer;
+}
+
+.header__nav-search_bar{
+    border-radius: 50px;
+    border: solid 1px;
+    cursor: pointer;
+}
+
+.header__nav-signup{
+    background-color: transparent;
+    color: #707ef7;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+    background: url('../../assets/cellBackground.svg')  #f3f3f3;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000;
+    padding: 15px 10px 15px 10px;
+    border: solid 2px black;
+    margin-right: 20px;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.header__nav-login{
+    background-color: transparent;
+    color: #707ef7;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+    background: url('../../assets/cellBackground.svg')  #f3f3f3;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000;
+    padding: 15px 10px 15px 10px;
+    border: solid 2px black;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.header__hover:hover{
+    opacity: .6;
+}
+
+.header__nav-avatar{ /*this needs to be centered*/
+    border-radius: 50%;
+    border: solid 1px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.header__nav-name{
+   color: black;
+   font-weight: 700;
+   /* text-shadow: 
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,  
+   -1px  1px 0 #000,  
+    1px  1px 0 #000; */
+}
+
+.header__nav-avatars{
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-button{
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-settings{
+    background: url('../../assets/settings-gear-svgrepo-com.svg') no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.header__nav-settings:hover{
+    opacity: .6;
+}

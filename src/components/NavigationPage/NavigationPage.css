@@ -1,0 +1,65 @@
+.navigation{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    visibility: visible;
+}
+
+.navigation__content{
+    background: #f3f3f3;
+    width: 100%;
+    min-height: 75vh;
+    justify-content: center;
+    margin: 0 auto;
+    /* margin-left: auto; */
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    border: solid 2px;
+    background: url('../../assets/comicpage.svg') #f3f3f3 no-repeat; /*#f5e960*/
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.navigation__title{
+    color: #707ef7;
+    background-color: grey;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000;
+    border-bottom: 2px solid #000000;
+    padding: 16px 0 16px 0;
+    margin-top: 0; 
+}
+
+.navigation__favorite{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.navigation__to-favorite{
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+    background: #f3f3f3;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    /* text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000; */
+    padding: 15px 10px 15px 10px;
+    border: solid 2px black;
+    margin: 0;
+    width: 253px;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.navigation__link{
+    text-decoration: none;
+}

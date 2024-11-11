@@ -1,0 +1,39 @@
+.search__input{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.search__bar{
+    border: solid 2px;
+    border-radius: 30px;
+    height: 60px;
+    width: 40vh;
+    border-color: #7bb4ef;
+    font-family: 'BackIssuesBB_reg', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 10px;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.search__bar-button{
+    background: url('../../assets/searchbutton1.svg') no-repeat center transparent;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    border: 1px solid #7bb4ef;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.search__link{
+    text-decoration: none;
+    display: flex;
+}
+
+.search__bar-button:hover{
+    opacity: .6;
+}

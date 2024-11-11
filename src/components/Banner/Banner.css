@@ -1,0 +1,32 @@
+.banner{
+    display: flex;
+    justify-content: center;
+    font-family: 'BackIssuesBB_boldital', Arial, sans-serif;
+    position: relative;
+}
+
+.banner__caption{
+    padding: 50px 50px 50px 50px;
+    background: #f3f3f3;
+    border: solid 2px black;
+    color: black;
+    font-size: 40px;
+    width: 40vh;
+    text-align: center;
+    font-family: 'BackIssuesBB_boldital', Arial, sans-serif;
+    /* text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,  
+    -2px  2px 0 #000,  
+     2px  2px 0 #000; */
+    margin: 0 0 20px 0;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+/* .banner__image{
+    background: url('../../assets/redArrow_1.svg') no-repeat;
+    width: 20px;
+    height: 20px;
+    margin: 250px 600px 0 0;
+    position: absolute;
+} */

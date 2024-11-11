@@ -1,0 +1,16 @@
+.button-logout{
+    position: absolute;
+    top: 208px;
+    left: 164px;
+    height: 20px;
+    border: transparent;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.button-logout:hover{
+    opacity: .6;
+    cursor: pointer;
+}

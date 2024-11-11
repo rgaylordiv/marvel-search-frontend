@@ -1,0 +1,74 @@
+.item-card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: solid 2px #000;
+    border-radius: 16px;
+    width: 300px;
+    height: 350px;
+    cursor: pointer;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.item-card__image{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 16px;
+    border: solid #000000 1px;
+}
+
+.item-card__title{
+    position: relative;
+    max-width: 200px; /* subject to change */
+    max-height: 24px;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'BackIssuesBB_reg', Arial, sans-serif;
+    color: black;
+    /* text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,  
+    -1px  1px 0 #000,  
+     1px  1px 0 #000; */
+    line-height: 20px;
+    /* border-radius: 10%; */
+    padding: 0 12px 0 12px;
+    margin: 0px 10px 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: 20px 7px 13px rgba(0, 0, 0);
+}
+
+.item-card__like{
+    position: relative;
+    background: url('../../assets/likeButton.svg') no-repeat;
+    width: 20px;
+    height: 17px;
+    border: none;
+    visibility: visible;
+    margin-top: auto;
+}
+
+.item-card__liked{
+    position: relative;
+    background: url('../../assets/likeButtonActive.svg') no-repeat transparent;
+    width: 20px;
+    height: 17px;
+    border: none;
+    visibility: visible;
+    margin-top: auto;
+}
+
+.item-card__info {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: absolute; 
+    top: 15px; 
+    left: 0; 
+    right: 0;
+    
+}

@@ -1,0 +1,136 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity .3s ease;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal_opened {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.modal__container {
+    position: relative;
+    padding: 28px 28px 36px;
+    background-color: white;
+    margin: auto;
+    /* border-radius: 10px; */
+    max-width: 496px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    border-color: black;
+    border: solid 2px;
+}
+
+.modal__close{
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    border: none;
+    background-color: transparent;
+    background-image: url('../../assets/close-button.svg');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.modal__heading {
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    width: 100%;
+}
+
+.modal__form-title{
+    margin: 0;
+    padding-bottom: 8px;
+    font-size: 16px;
+}
+
+.modal__form-input {
+    border-width: 1px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+    max-height: 28px;
+    padding-bottom: 4px;
+    border-color: #000000;
+}
+
+#modal-name{
+    padding-bottom: 24px;
+}
+
+.modal__button {
+    background-color: black;
+    color: #fff;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20x;
+    text-align: center;
+    width: 124px;
+    height: 36px;
+    margin-top: 24px;
+    cursor: pointer;
+    border: #000000 solid 1px;
+    border-radius: 10%;
+}
+
+.modal__button:hover{
+    opacity: .6;
+}
+
+.modal__radio-buttons{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+}
+
+.modal__legend{
+    padding-bottom: 12px;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.modal__label{
+    opacity: .6;
+    padding-bottom: 8px;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    accent-color: black;
+}
+
+.modal__label:has(input:checked){
+    opacity: 1;
+}
