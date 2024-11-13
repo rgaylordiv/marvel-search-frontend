@@ -8,7 +8,7 @@ export default function ComicSection( isLiked, setIsLiked ){
                 <p className='comic-section__title'>Your favorite Hero's and Comics!</p>
             </div>
             <ul className='comic-section__lists'>
-                <ItemCard isLiked={isLiked} setIsLiked={setIsLiked}/>
+                
             </ul>
         </div>
     )

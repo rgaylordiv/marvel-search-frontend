@@ -1,18 +1,41 @@
-import './ItemCard.css';
-import comicTest from '../../assets/comicTest.png';
+import "./ItemCard.css";
+import comicTest from "../../assets/comicTest.png";
 
-export default function CharacterCard( isLiked ){
-    const itemLikeButtonClass = (
-        `${isLiked ? 'item-card__liked' : 'item-card__like'}`
-    )
+export default function ItemCard({ isLiked, data, onClick }) {
+  const itemLikeButtonClass = `${
+    isLiked ? "item-card__liked" : "item-card__like"
+  }`;
 
-    return(
-        <div className='item-card'>
-            <div className='item-card__info'>
-                <p className='item-card__title'>Amazing Fantasy #15</p>
-                <button className={itemLikeButtonClass} type='button'></button>
+  return (
+    <div className="item-card">
+      {data.map((character) => {
+        return (
+          <div className="item-card__wrapper" key={character.id}>
+            <div className="item-card__info">
+              <p className="item-card__title" key={character.name}>
+                {character.name}
+              </p>
+              <button className={itemLikeButtonClass} type="button"></button>
             </div>
-            <img className='item-card__image' src={comicTest} />
-        </div>
-    )
+            <img
+              className="item-card__image"
+              style={{
+                background: `url(${character.thumbnail.path}.${character.thumbnail.extension}) no-repeat center`,
+                backgroundSize: "cover",
+              }}
+            />
+            <div className="item-card__button">
+              <button
+                className="item-card__comic"
+                type="button"
+                onClick={() => onClick(character.id)}
+              >
+                View Comics!
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

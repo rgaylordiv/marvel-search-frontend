@@ -17,4 +17,5 @@ body {
 .app__wrapper {
   margin: 0 auto;
   max-width: 1360px;
+  height: 100%;
 }
