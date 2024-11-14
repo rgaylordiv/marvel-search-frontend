@@ -8,7 +8,7 @@
     border: solid 2px;
     border-radius: 30px;
     height: 60px;
-    width: 40vh;
+    width: 30vw;
     border-color: #7bb4ef;
     font-family: 'BackIssuesBB_reg', Arial, sans-serif;
     font-size: 16px;
@@ -81,4 +81,10 @@
     margin: 0;
     width: 253px;
     box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+@media screen and (max-width: 568px) {
+    .search__bar{
+       min-width: 178px;
+    }
 }

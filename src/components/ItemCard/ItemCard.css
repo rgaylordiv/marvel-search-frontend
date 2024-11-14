@@ -1,7 +1,8 @@
 .item-card{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, 282px);
+    justify-content: center;
     /* border-radius: 16px; */
     /* display: flex;
     flex-wrap: wrap;
@@ -108,4 +109,11 @@
     display: flex;
     position: relative;
     justify-content: center;
+}
+
+@media screen and (max-width: 1358px) {
+    .item-card{
+        grid-template-columns: repeat(auto-fit, 282px);
+        justify-content: center;
+    }
 }

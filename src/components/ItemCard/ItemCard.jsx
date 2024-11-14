@@ -7,7 +7,7 @@ export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
   }`;
 
   return (
-    <div className="item-card">
+    <li className="item-card">
       {data.map((character) => {
         return (
           <div className="item-card__wrapper" key={character.id}>
@@ -37,6 +37,6 @@ export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
           </div>
         );
       })}
-    </div>
+    </li>
   );
 }

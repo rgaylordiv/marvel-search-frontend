@@ -17,11 +17,11 @@ export default function Header({ handleChangeClick }) {
         <nav className="header__nav-bar">
           <ul className="header__nav-content">
             {/* <li>
-                                <button className='header__nav-signup header__hover'>Sign Up</button>
-                            </li>
-                            <li>
-                                <button className='header__nav-login header__hover'>Log In</button>
-                            </li> */}
+                  <button className='header__nav-signup header__hover'>Sign Up</button>
+                </li>
+                <li>
+                  <button className='header__nav-login header__hover'>Log In</button>
+                </li> */}
             <li className="header__nav-avatars">
               <img
                 className="header__nav-avatar"
@@ -30,7 +30,7 @@ export default function Header({ handleChangeClick }) {
               />
             </li>
             <li>
-              <p className="header__nav-name" value={name}>Roger Gaylord</p>
+              <p className="header__nav-name">Roger Gaylord</p>
             </li>
             <li className="header__nav-button">
               <button

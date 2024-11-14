@@ -110,8 +110,7 @@ export default function NavigationPage({
 
       {/* Only show results after loading is complete */}
       {!isLoading && (
-        <ul className="search__results">
-          <div className="search__results-list">
+        <ul className="navigation__results">
             {!comicData &&
               characterInfo &&
               Array.isArray(characterInfo.results) &&
@@ -128,7 +127,6 @@ export default function NavigationPage({
               comicData.results &&
               Array.isArray(comicData.results) &&
               comicData.results[0] && <ComicCard data={comicData.results} />}
-          </div>
         </ul>
       )}
     </section>

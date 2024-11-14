@@ -7,6 +7,7 @@ body {
   background: url('../../assets/comicPages.jpg') no-repeat fixed;
   background-size: cover;
   background-position: center;
+  overflow: auto;
 }
 
 .app{
@@ -15,7 +16,8 @@ body {
 }
 
 .app__wrapper {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1360px;
-  height: 100%;
 }
