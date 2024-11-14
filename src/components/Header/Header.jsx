@@ -30,7 +30,7 @@ export default function Header({ handleChangeClick }) {
               />
             </li>
             <li>
-              <p className="header__nav-name">Roger Gaylord</p>
+              <p className="header__nav-name" value={name}>Roger Gaylord</p>
             </li>
             <li className="header__nav-button">
               <button

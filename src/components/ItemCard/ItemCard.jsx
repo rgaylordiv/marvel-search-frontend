@@ -1,7 +1,7 @@
 import "./ItemCard.css";
 import comicTest from "../../assets/comicTest.png";
 
-export default function ItemCard({ isLiked, data, onClick }) {
+export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
   const itemLikeButtonClass = `${
     isLiked ? "item-card__liked" : "item-card__like"
   }`;
@@ -26,11 +26,12 @@ export default function ItemCard({ isLiked, data, onClick }) {
             />
             <div className="item-card__button">
               <button
+                // key={comic.comics?.available}
                 className="item-card__comic"
                 type="button"
                 onClick={() => onClick(character.id)}
               >
-                View Comics!
+                View Comics! ({comicsAvailable})
               </button>
             </div>
           </div>

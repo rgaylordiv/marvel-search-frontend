@@ -32,7 +32,7 @@
     object-position: 50% 50%;
     /* border-radius: 16px; */
     border: solid #000000 1px;
-    box-shadow: 15px 2px 13px rgba(0, 0, 0);
+    box-shadow: 15px 14px 13px rgba(0, 0, 0);
 }
 
 .item-card__title{

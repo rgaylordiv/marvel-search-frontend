@@ -136,6 +136,7 @@ function App() {
         isOpen={activeModal === "change"}
         activeModal={activeModal}
         closeActiveModal={closeActiveModal}
+        isLoading={isLoading}
       />
       {/* <Preloader /> */}
     </div>

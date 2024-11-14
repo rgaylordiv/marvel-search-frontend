@@ -20,7 +20,7 @@
     object-position: 50% 50%;
     /* border-radius: 16px; */
     border: solid #000000 1px;
-    box-shadow: 15px 2px 13px rgba(0, 0, 0);
+    box-shadow: 12px 12px 13px rgba(0, 0, 0);
     text-decoration: none;
 }
 
@@ -41,7 +41,7 @@
     line-height: 20px;
     /* border-radius: 10%; */
     padding: 0 12px 0 12px;
-    margin: 0px 10px 0 0;
+    margin: 0px 5px 0 5px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

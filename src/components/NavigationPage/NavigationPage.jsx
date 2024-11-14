@@ -13,35 +13,34 @@ export default function NavigationPage({
   handleComicSearchResults,
   isLoading,
   setIsLoading,
-//   getComicData,
-//   getCharacterData,
-//   handleSubmit,
-//   handleChange,
+  //   getComicData,
+  //   getCharacterData,
+  //   handleSubmit,
+  //   handleChange,
 }) {
+  const [comicData, setComicData] = useState(null); // Store the search results
+  const [characterInfo, setCharacterInfo] = useState(null);
+  const [character, setCharacter] = useState("");
+  const [comic, setComic] = useState("");
+  //   const [characterInfo, setCharacterInfo] = useState(null);
+  //   const [comicData, setComicData] = useState(null); // Store the search results
 
-const [comicData, setComicData] = useState(null); // Store the search results
-const [characterInfo, setCharacterInfo] = useState(null);
-const [character, setCharacter] = useState("");
-const [comic, setComic] = useState("");
-//   const [characterInfo, setCharacterInfo] = useState(null);
-//   const [comicData, setComicData] = useState(null); // Store the search results
+  //   const handleCharacterSearchResults = (results) => {
+  //     setCharacterInfo(results); // Update the state when new results come in
+  //   };
 
-//   const handleCharacterSearchResults = (results) => {
-//     setCharacterInfo(results); // Update the state when new results come in
-//   };
+  //   const handleComicSearchResults = (results) => {
+  //     setComicData(results);
+  //   };
 
-//   const handleComicSearchResults = (results) => {
-//     setComicData(results);
-//   };
+  //   const generateHash = (timeStamp) => {
+  //     return md5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
+  //   };
 
-//   const generateHash = (timeStamp) => {
-//     return md5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
-//   };
+  //   const timeStamp = new Date().getTime();
+  //   const hash = generateHash(timeStamp);
 
-//   const timeStamp = new Date().getTime();
-//   const hash = generateHash(timeStamp);
-
-const handleSubmit = (evt) => {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
     setIsLoading(true);
     getCharacterData();
@@ -51,14 +50,14 @@ const handleSubmit = (evt) => {
     setCharacter(evt.target.value);
   };
 
-const generateHash = (timeStamp) => {
+  const generateHash = (timeStamp) => {
     return md5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
   };
 
-const timeStamp = new Date().getTime();
-const hash = generateHash(timeStamp);
+  const timeStamp = new Date().getTime();
+  const hash = generateHash(timeStamp);
 
-const getCharacterData = () => {
+  const getCharacterData = () => {
     setCharacterInfo(null);
     setComicData(null);
 
@@ -117,7 +116,13 @@ const getCharacterData = () => {
               characterInfo &&
               Array.isArray(characterInfo.results) &&
               characterInfo.results[0] && (
-                <ItemCard data={characterInfo.results} onClick={getComicData} />
+                <ItemCard
+                  data={characterInfo.results}
+                  onClick={getComicData}
+                  comicsAvailable={
+                    characterInfo.results[0]?.comics?.available || 0
+                  }
+                />
               )}
             {comicData &&
               comicData.results &&
