@@ -81,6 +81,7 @@
     white-space: nowrap;
     overflow: hidden;
     box-shadow: 12px 7px 13px rgba(0, 0, 0);
+    color: rgb(23, 177, 23);
 }
 
 .comics__card-header{

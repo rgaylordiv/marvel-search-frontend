@@ -8,6 +8,9 @@ export default function ComicCard({ data }) {
           (element) => element["type"] === "detail"
         ).url;
 
+        const price =
+          comic.prices && comic.prices[0] ? comic.prices[0].price : 0;
+
         return (
           <a
             key={comic.id}
@@ -27,11 +30,8 @@ export default function ComicCard({ data }) {
                 </div>
               </div>
               <div className="comics__value">
-                <p className="comics__price" key={comic.prices[0].price}>
-                  $
-                  {comic.prices && comic.prices[0]
-                    ? comic.prices[0].price
-                    : "N/A"}
+                <p className="comics__price">
+                  ${price === 0 ? "N/A" : price.toFixed(2)}
                 </p>
               </div>
             </div>

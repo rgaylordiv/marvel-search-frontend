@@ -1,9 +1,10 @@
 import "./Header.css";
+import { useContext } from "react";
 import spidermanAvatar from "../../assets/spidermanAvatar.jpg";
 import settings from "../../assets/settings-gear-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 
-export default function Header({ handleChangeClick }) {
+export default function Header({ handleChangeClick, currentUser }) {
   return (
     <header className="header">
       <div className="header__contents">
@@ -25,12 +26,14 @@ export default function Header({ handleChangeClick }) {
             <li className="header__nav-avatars">
               <img
                 className="header__nav-avatar"
-                src={spidermanAvatar}
+                src={currentUser.avatar || spidermanAvatar}
                 alt="avatar"
               />
             </li>
             <li>
-              <p className="header__nav-name">Roger Gaylord</p>
+              <p className="header__nav-name">
+                {currentUser.name || "No Name"}
+              </p>
             </li>
             <li className="header__nav-button">
               <button

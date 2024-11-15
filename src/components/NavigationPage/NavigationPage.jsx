@@ -13,32 +13,10 @@ export default function NavigationPage({
   handleComicSearchResults,
   isLoading,
   setIsLoading,
-  //   getComicData,
-  //   getCharacterData,
-  //   handleSubmit,
-  //   handleChange,
 }) {
   const [comicData, setComicData] = useState(null); // Store the search results
   const [characterInfo, setCharacterInfo] = useState(null);
   const [character, setCharacter] = useState("");
-  const [comic, setComic] = useState("");
-  //   const [characterInfo, setCharacterInfo] = useState(null);
-  //   const [comicData, setComicData] = useState(null); // Store the search results
-
-  //   const handleCharacterSearchResults = (results) => {
-  //     setCharacterInfo(results); // Update the state when new results come in
-  //   };
-
-  //   const handleComicSearchResults = (results) => {
-  //     setComicData(results);
-  //   };
-
-  //   const generateHash = (timeStamp) => {
-  //     return md5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
-  //   };
-
-  //   const timeStamp = new Date().getTime();
-  //   const hash = generateHash(timeStamp);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -75,7 +53,7 @@ export default function NavigationPage({
       });
   };
 
-  const getComicData = (characterId) => {
+  const getComicData = (characterId) => { // can filter by name but results aren't always accurate to the character chosen
     setCharacterInfo(null);
     setComicData(null);
     setIsLoading(true);
@@ -111,22 +89,27 @@ export default function NavigationPage({
       {/* Only show results after loading is complete */}
       {!isLoading && (
         <ul className="navigation__results">
-            {!comicData &&
-              characterInfo &&
-              Array.isArray(characterInfo.results) &&
-              characterInfo.results[0] && (
-                <ItemCard
-                  data={characterInfo.results}
-                  onClick={getComicData}
-                  comicsAvailable={
-                    characterInfo.results[0]?.comics?.available || 0
-                  }
-                />
-              )}
-            {comicData &&
-              comicData.results &&
-              Array.isArray(comicData.results) &&
-              comicData.results[0] && <ComicCard data={comicData.results} />}
+          {/* Check if there are character results */}
+          {characterInfo &&
+          characterInfo.results &&
+          Array.isArray(characterInfo.results) &&
+          characterInfo.results.length === 0 ? (
+            <div className="navigation__no-results">
+              <p className="navigation__no-results-text">No characters found for your search</p>
+            </div>
+          ) : (
+            characterInfo &&
+            characterInfo.results &&
+            Array.isArray(characterInfo.results) &&
+            characterInfo.results.length > 0 && (
+              <ItemCard data={characterInfo.results} onClick={getComicData} />
+            )
+          )}
+
+          {comicData &&
+            comicData.results &&
+            Array.isArray(comicData.results) &&
+            comicData.results[0] && <ComicCard data={comicData.results} />}
         </ul>
       )}
     </section>

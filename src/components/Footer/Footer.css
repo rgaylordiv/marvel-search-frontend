@@ -1,0 +1,42 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0 0 0;
+}
+
+.footer__caption{
+    display: flex;
+    background: #f3f3f3;
+    border: solid 2px #000;
+    font-family: 'BackIssuesBB_boldital', Arial, sans-serif;
+    font-size: 15px;
+    padding: 5px 10px;
+    max-width: 200px;
+    max-height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+}
+
+.footer__image{
+    display: flex;
+}
+
+.footer__copyright{
+    width: 80px;
+    height: 80px;
+}
+
+@media screen and (max-width: 616px) {
+    .footer{
+        margin: 0 20px 0 20px;
+    }
+
+    .footer__caption{
+        font-size: 12px;
+        padding: 2.5px 5px;
+    }
+}
+

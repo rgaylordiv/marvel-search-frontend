@@ -4,6 +4,7 @@ import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Profile from "../Profile/Profile.jsx";
 import NavigationPage from "../NavigationPage/NavigationPage.jsx";
+import Footer from "../Footer/Footer.jsx";
 import "./App.css";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import Preloader from "../Preloader/Preloader.jsx";
@@ -16,6 +17,10 @@ function App() {
   const [character, setCharacter] = useState("");
   const [comicData, setComicData] = useState(null); // Store the search results
   const [characterInfo, setCharacterInfo] = useState(null);
+  const [currentUser, setCurrentUser] = useState({
+    name: "",
+    avatar: "",
+  });
 
   const handleCharacterSearchResults = (results) => {
     setIsLoading(false);
@@ -27,64 +32,17 @@ function App() {
     setComicData(results);
   };
 
-  // const generateHash = (timeStamp) => {
-  //   return md5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
-  // };
-
-  // const timeStamp = new Date().getTime();
-  // const hash = generateHash(timeStamp);
-
-  // const getComicData = (characterId) => {
-  //   setCharacterInfo(null);
-  //   setComicData(null);
-
-  //   const comicUrl = `http://gateway.marvel.com/v1/public/characters/${characterId}/comics?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&limit=100`;
-
-  //   fetch(comicUrl)
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       setComicData(result.data || { results: [] });
-  //       handleComicSearchResults(result.data); // was onComicSearchResults
-  //       console.log(result);
-  //     })
-  //     .catch((err) => {
-  //       console.error("Error message:" + err);
-  //     });
-  // };
-
-  // const handleSubmit = (evt) => {
-  //   evt.preventDefault();
-  //   getCharacterData();
-  // };
-
-  // const handleChange = (evt) => {
-  //   setCharacter(evt.target.value);
-  // };
-
-  // const getCharacterData = () => {
-  //   setCharacterInfo(null);
-  //   setComicData(null);
-
-  //   const characterUrl = `http://gateway.marvel.com/v1/public/characters?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${character}&limit=100`;
-
-  //   fetch(characterUrl)
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       setCharacterInfo(result.data || { results: [] });
-  //       handleCharacterSearchResults(result.data); // was onCharacterSearchResults
-  //       console.log(result);
-  //     })
-  //     .catch((err) => {
-  //       console.error("Error message:" + err);
-  //     });
-  // };
-
   const handleChangeClick = () => {
     setActiveModal("change");
   };
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const handleProfileChange = (newName, newAvatar) => {
+    setCurrentUser({ name: newName, avatar: newAvatar });
+    closeActiveModal();
   };
 
   useEffect(() => {
@@ -108,7 +66,10 @@ function App() {
   return (
     <div className="app">
       <div className="app__wrapper">
-        <Header handleChangeClick={handleChangeClick} />
+        <Header
+          handleChangeClick={handleChangeClick}
+          currentUser={currentUser}
+        />
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route
@@ -123,22 +84,20 @@ function App() {
                 handleComicSearchResults={handleComicSearchResults}
                 isLoading={isLoading}
                 setIsLoading={setIsLoading}
-                // getComicData={getComicData}
-                // getCharacterData={getCharacterData}
-                // handleSubmit={handleSubmit}
-                // handleChange={handleChange}
               />
             }
           ></Route>
         </Routes>
+        <Footer />
       </div>
       <EditProfileModal
         isOpen={activeModal === "change"}
         activeModal={activeModal}
         closeActiveModal={closeActiveModal}
         isLoading={isLoading}
+        handleProfileChange={handleProfileChange}
+        currentUser={currentUser}
       />
-      {/* <Preloader /> */}
     </div>
   );
 }

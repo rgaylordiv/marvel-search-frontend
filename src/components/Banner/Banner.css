@@ -8,7 +8,6 @@
 .banner__caption{
     display: flex;
     padding: 50px 50px 50px 50px;
-    align-items: center;
     background: #f3f3f3;
     border: solid 2px black;
     color: black;
@@ -16,6 +15,7 @@
     max-width: 800px;
     height: 105px;
     text-align: center;
+    align-items: center;
     font-family: 'BackIssuesBB_boldital', Arial, sans-serif;
     /* text-shadow: 
     -2px -2px 0 #000,  

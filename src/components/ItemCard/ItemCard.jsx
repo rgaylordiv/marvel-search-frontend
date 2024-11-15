@@ -1,10 +1,11 @@
 import "./ItemCard.css";
+import { useState } from "react";
 import comicTest from "../../assets/comicTest.png";
 
 export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
-  const itemLikeButtonClass = `${
-    isLiked ? "item-card__liked" : "item-card__like"
-  }`;
+  // const itemLikeButtonClass = `${
+  //   isLiked ? "item-card__liked" : "item-card__like"
+  // }`;
 
   return (
     <li className="item-card">
@@ -15,7 +16,7 @@ export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
               <p className="item-card__title" key={character.name}>
                 {character.name}
               </p>
-              <button className={itemLikeButtonClass} type="button"></button>
+              <button className="item-card__like" type="button"></button>
             </div>
             <img
               className="item-card__image"
@@ -25,14 +26,18 @@ export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
               }}
             />
             <div className="item-card__button">
-              <button
-                // key={comic.comics?.available}
-                className="item-card__comic"
-                type="button"
-                onClick={() => onClick(character.id)}
-              >
-                View Comics! ({comicsAvailable})
-              </button>
+              {character.comics?.available === 0 ? (
+                ""
+              ) : (
+                <button
+                  // key={comic.comics?.available}
+                  className="item-card__comic"
+                  type="button"
+                  onClick={() => onClick(character.id)}
+                >
+                  View Comics!
+                </button>
+              )}
             </div>
           </div>
         );

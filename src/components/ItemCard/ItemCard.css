@@ -70,7 +70,7 @@
     margin-top: auto;
 }
 
-.item-card__liked{
+.item-card__like:active{
     position: relative;
     background: url('../../assets/likeButtonActive.svg') no-repeat transparent;
     width: 20px;
