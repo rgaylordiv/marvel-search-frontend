@@ -39,7 +39,7 @@ export default function NavigationPage({
     setCharacterInfo(null);
     setComicData(null);
 
-    const characterUrl = `http://gateway.marvel.com/v1/public/characters?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${character}&limit=100`;
+    const characterUrl = `https://gateway.marvel.com/v1/public/characters?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${character}&limit=100`;
 
     fetch(characterUrl)
       .then((response) => response.json())
@@ -58,7 +58,7 @@ export default function NavigationPage({
     setComicData(null);
     setIsLoading(true);
 
-    const comicUrl = `http://gateway.marvel.com/v1/public/characters/${characterId}/comics?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&limit=100`;
+    const comicUrl = `https://gateway.marvel.com/v1/public/characters/${characterId}/comics?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&limit=100`;
 
     fetch(comicUrl)
       .then((response) => response.json())

@@ -16,7 +16,7 @@ export default function ItemCard({ isLiked, data, onClick, comicsAvailable }) {
               <p className="item-card__title" key={character.name}>
                 {character.name}
               </p>
-              <button className="item-card__like" type="button"></button>
+              {/* <button className="item-card__like" type="button"></button> */}
             </div>
             <img
               className="item-card__image"

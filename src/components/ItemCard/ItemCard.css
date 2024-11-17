@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: center; */
     width: 100%;
-    height: 260px;
+    /* height: 260px; */
     /* overflow: auto; */
     cursor: pointer;
     gap: 21px;
