@@ -10,4 +10,4 @@ For this project I used React.js, Javascript, HTML, CSS (flexbox, grid, animatio
 
 ## Links
 
-- [Deployed Site](https://github.com/rgaylordiv/marvel-search-frontend)
+- [Deployed Site](https://rgaylordiv.github.io/marvel-search-frontend/)
