@@ -9,6 +9,7 @@ import "./App.css";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import Preloader from "../Preloader/Preloader.jsx";
 
+// This comment is so I can make a pull request, accidentally worked in main branch for the project
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
