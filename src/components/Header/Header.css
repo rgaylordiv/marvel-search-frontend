@@ -2,6 +2,7 @@
     display: flex;
     font-family: 'BackIssuesBB_reg', Arial, Helvetica;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__contents{
@@ -142,4 +143,41 @@
 
 .header__nav-settings:hover{
     opacity: .6;
+}
+
+@media screen and (max-width: 1358px) {
+    /* .header{
+       margin: 0 20px 0 20px;
+    } */
+}
+
+@media screen and (max-width: 616px) {
+    .header{
+        margin: 0 20px 0 20px;
+     }
+
+    .header__nav-name{
+       font-size: 12px;
+    }
+
+    .header__nav-avatar{
+        width: 20px;
+        height: 20px;
+        margin: 0 5px 0 0;
+    }
+
+    .header__nav-settings{
+        width: 15px;
+        height: 15px;
+        margin: 0 0 0 5px;
+    }
+
+    .header__title-name{
+        font-size: 12px;
+        padding: 10px 5px 10px 5px;
+    }
+
+    .header__nav-content{
+        padding: 2.5px 5px 2.5px 5px;
+    }
 }

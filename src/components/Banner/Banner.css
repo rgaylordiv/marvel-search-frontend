@@ -6,13 +6,16 @@
 }
 
 .banner__caption{
+    display: flex;
     padding: 50px 50px 50px 50px;
     background: #f3f3f3;
     border: solid 2px black;
     color: black;
     font-size: 40px;
-    width: 40vh;
+    max-width: 800px;
+    height: 105px;
     text-align: center;
+    align-items: center;
     font-family: 'BackIssuesBB_boldital', Arial, sans-serif;
     /* text-shadow: 
     -2px -2px 0 #000,  
@@ -23,10 +26,9 @@
     box-shadow: 14px 11px 14px rgba(0, 0, 0);
 }
 
-/* .banner__image{
-    background: url('../../assets/redArrow_1.svg') no-repeat;
-    width: 20px;
-    height: 20px;
-    margin: 250px 600px 0 0;
-    position: absolute;
-} */
+@media screen and (max-width: 616px) {
+    .banner__caption{
+        font-size: 25px;
+        padding: 20px 5px 20px 5px;
+    }
+}

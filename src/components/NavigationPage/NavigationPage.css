@@ -3,22 +3,24 @@
     flex-direction: column;
     gap: 20px;
     visibility: visible;
+    justify-content: center;
 }
 
 .navigation__content{
     background: #f3f3f3;
     width: 100%;
-    min-height: 75vh;
-    justify-content: center;
+    max-height: 75vh;
     margin: 0 auto;
     /* margin-left: auto; */
     font-family: 'BackIssuesBB_reg', Arial, Helvetica;
     border: solid 2px;
-    background: url('../../assets/comicpage.svg') #f3f3f3 no-repeat; /*#f5e960*/
+    background: url('../../assets/comicpage.svg') #f5e960 no-repeat; /*#f5e960*/
     background-size: cover;
     background-position: center;
     text-align: center;
     box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    padding: 0 20px 0 20px;
 }
 
 .navigation__title{
@@ -62,4 +64,78 @@
 
 .navigation__link{
     text-decoration: none;
+}
+
+.navigation__results-caption{
+    background: #f3f3f3;
+    border: solid 1px #000;
+    padding: 5px;
+    box-shadow: 4px 4px 13px #000;
+}
+
+.navigation__results{
+    display: flex;  
+    justify-content: center;
+    padding: 0;
+    font-family: 'BackIssuesBB_reg', Arial, Helvetica;
+    list-style: none;
+    /* height: 45vh; */
+}
+
+.navigation__no-results{
+    background: #f3f3f3;
+    text-align: center;
+    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    border: solid 2px black;
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    padding: 10px;
+    display: flex;
+    max-width: 250px;
+    max-height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .navigation__no-results{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1419px) {
+    .navigation__no-results{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1335px) {
+    .navigation__no-results{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .navigation__no-results{
+        font-size: 12px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 597px) {
+    .navigation__no-results{
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 516px) {
+    .navigation__no-results{
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    .navigation__no-results{
+        font-size: 6px;
+    }
 }

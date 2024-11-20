@@ -1,28 +1,48 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import viteLogo from '/vite.svg'
-import Header from '../Header/Header.jsx';
-import Banner from '../Banner/Banner.jsx';
-import Search from '../Search/Search.jsx';
-import Main from '../Main/Main.jsx';
-import Profile from '../../Profile/Profile.jsx';
-import CharacterCard from'../ItemCard/ItemCard.jsx';
-import NavigationPage from '../NavigationPage/NavigationPage.jsx';
-import './App.css'
-import EditProfileModal from '../EditProfileModal/EditProfileModal.jsx';
+import { useState, useEffect } from "react";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import Header from "../Header/Header.jsx";
+import Main from "../Main/Main.jsx";
+import Profile from "../Profile/Profile.jsx";
+import NavigationPage from "../NavigationPage/NavigationPage.jsx";
+import Footer from "../Footer/Footer.jsx";
+import "./App.css";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
+import Preloader from "../Preloader/Preloader.jsx";
 
 function App() {
-  const [activeModal, setActiveModal] = useState('');
+  const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [character, setCharacter] = useState("");
+  const [comicData, setComicData] = useState(null); // Store the search results
+  const [characterInfo, setCharacterInfo] = useState(null);
+  const [currentUser, setCurrentUser] = useState({
+    name: "",
+    avatar: "",
+  });
+
+  const handleCharacterSearchResults = (results) => {
+    setIsLoading(false);
+    setCharacterInfo(results); // Update the state when new results come in
+  };
+
+  const handleComicSearchResults = (results) => {
+    setIsLoading(false);
+    setComicData(results);
+  };
 
   const handleChangeClick = () => {
-    setActiveModal('change');
-  }
+    setActiveModal("change");
+  };
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const handleProfileChange = (newName, newAvatar) => {
+    setCurrentUser({ name: newName, avatar: newAvatar });
+    closeActiveModal();
   };
 
   useEffect(() => {
@@ -42,29 +62,44 @@ function App() {
       document.removeEventListener("keydown", handleEscClose);
     };
   }, [activeModal]);
-    
+
   return (
-    <div className='app'>
-      <div className='app__wrapper'>
-        <Header handleChangeClick={handleChangeClick}/>
+    <div className="app">
+      <div className="app__wrapper">
+        <Header
+          handleChangeClick={handleChangeClick}
+          currentUser={currentUser}
+        />
         <Routes>
-          <Route path='/' element={
-            <Main/>
-          }>
-          </Route>
-          <Route path='/profile' element={
-            <Profile isLiked={isLiked} setIsLiked={setIsLiked}/>
-          }>  
-          </Route>
-          <Route path='/search' element={
-            <NavigationPage />
-          }>
-          </Route>
+          <Route path="/" element={<Main />}></Route>
+          <Route
+            path="/profile"
+            element={<Profile isLiked={isLiked} setIsLiked={setIsLiked} />}
+          ></Route>
+          <Route
+            path="/search"
+            element={
+              <NavigationPage
+                handleCharacterSearchResults={handleCharacterSearchResults}
+                handleComicSearchResults={handleComicSearchResults}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
+              />
+            }
+          ></Route>
         </Routes>
+        <Footer />
       </div>
-      <EditProfileModal isOpen={activeModal === 'change'} activeModal={activeModal} closeActiveModal={closeActiveModal}/>
+      <EditProfileModal
+        isOpen={activeModal === "change"}
+        activeModal={activeModal}
+        closeActiveModal={closeActiveModal}
+        isLoading={isLoading}
+        handleProfileChange={handleProfileChange}
+        currentUser={currentUser}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -4,17 +4,19 @@ html, body {
 }
 
 body {
-  background: url('../../assets/comicPages.jpg') no-repeat fixed;
+  background: url('../../assets/comicPagesTestBlur.jpg') no-repeat fixed;
   background-size: cover;
   background-position: center;
+  overflow: auto;
 }
 
 .app{
-  background: rgba(0, 0, 0, .4);
   height: 100vh;
 }
 
 .app__wrapper {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1360px;
 }

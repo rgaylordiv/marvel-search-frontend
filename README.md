@@ -1,8 +1,13 @@
-# React + Vite
+# Marvel Comic Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About The Project
 
-Currently, two official plugins are available:
+Hello! This is the Marvel Comic Search. This site is meant to be used as a library that can be used to find your favorite hero's and comics they have appeared. By using the Marvel API, I was able to use all of the elements that I have learned from my past projects and combine them with new ideas, such as a functional search bar that connects to a third-party API. As a huge Marvel nerd this has been a passion project and I'm excited to be able to deliver this type of project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Techniques
+
+For this project I used React.js, Javascript, HTML, CSS (flexbox, grid, animations), Vite.js, and md5.
+
+## Links
+
+- [Deployed Site](https://rgaylordiv.github.io/marvel-search-frontend/)

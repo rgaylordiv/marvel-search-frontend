@@ -1,21 +1,39 @@
 .item-card{
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 282px);
+    justify-content: center;
+    /* border-radius: 16px; */
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center; */
+    width: 100%;
+    /* height: 260px; */
+    /* overflow: auto; */
+    cursor: pointer;
+    gap: 21px;
+}
+
+.item-card__wrapper{
+    position: relative;
     display: flex;
     justify-content: center;
-    border: solid 2px #000;
-    border-radius: 16px;
-    width: 300px;
-    height: 350px;
+    /* border: solid 2px #000; */
+    /* border-radius: 16px; */
     cursor: pointer;
-    box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    /* box-shadow: 14px 11px 14px rgba(0, 0, 0); */
+    flex-wrap: wrap;
 }
 
 .item-card__image{
     width: 100%;
+    height: 260px;
     object-fit: cover;
     object-position: 50% 50%;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     border: solid #000000 1px;
+    box-shadow: 15px 14px 13px rgba(0, 0, 0);
 }
 
 .item-card__title{
@@ -39,7 +57,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    box-shadow: 20px 7px 13px rgba(0, 0, 0);
+    box-shadow: 12px 7px 13px rgba(0, 0, 0);
 }
 
 .item-card__like{
@@ -52,13 +70,13 @@
     margin-top: auto;
 }
 
-.item-card__liked{
+.item-card__like:active{
     position: relative;
     background: url('../../assets/likeButtonActive.svg') no-repeat transparent;
     width: 20px;
     height: 17px;
     border: none;
-    visibility: visible;
+    /* visibility: visible; */
     margin-top: auto;
 }
 
@@ -70,5 +88,32 @@
     top: 15px; 
     left: 0; 
     right: 0;
-    
+}
+
+.item-card__comic {
+    position: relative; /* Fix the button to the bottom */
+    bottom: 20px; /* Adjust as needed to make sure it’s not too close to the bottom */
+    transform: translateX(-50%);
+    background-color: #f3f3f3;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 4px 4px 13px rgba(0, 0, 0);
+    font-weight: 700;
+    margin-left: 130px;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
+}
+
+.item-card__button {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1358px) {
+    .item-card{
+        grid-template-columns: repeat(auto-fit, 282px);
+        justify-content: center;
+    }
 }

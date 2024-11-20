@@ -1,8 +1,8 @@
 import './EditProfileModal.css'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import ModalWithForm from '../ModalWithForm/ModalWithForm.jsx'
 
-export default function EditProfileModal( {isOpen, activeModal, closeActiveModal} ){
+export default function EditProfileModal( {isOpen, activeModal, closeActiveModal, isLoading, currentUser, handleProfileChange } ){
     const [data, setData] = useState({
         name: '',
         avatar: '',
@@ -18,10 +18,20 @@ export default function EditProfileModal( {isOpen, activeModal, closeActiveModal
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        handleProfileChange(data.name, data.avatar);
       };
 
+    useEffect(() => {
+        if (isOpen) {
+          setData({
+            name: currentUser.name,
+            avatar: currentUser.avatar,
+          });
+        }
+    }, [isOpen, currentUser]);
+
     return(
-        <ModalWithForm buttonText={'Save'} title='Change profile data' activeModal={activeModal} closeActiveModal={closeActiveModal} isOpen={isOpen} handleSubmit={handleSubmit}>
+        <ModalWithForm buttonText={isLoading ? 'Saving...' : 'Save'} title='Change profile data' activeModal={activeModal} closeActiveModal={closeActiveModal} isOpen={isOpen} onSubmit={handleSubmit}>
             <label className="modal__form-group" htmlFor="name" id="modal-name">
                 <span className="modal__form-title">Name *</span>
                 <input
