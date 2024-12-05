@@ -40,6 +40,7 @@
     margin: 0;
     max-width: 253px;
     box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    font-size: 13px;
 }
 
 .main__search-page_text{
@@ -60,6 +61,7 @@
     margin: 0;
     max-width: 253px;
     box-shadow: 14px 11px 14px rgba(0, 0, 0);
+    font-size: 13px;
 }
 
 .main-link{

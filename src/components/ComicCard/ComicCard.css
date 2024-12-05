@@ -61,7 +61,7 @@
 
 .comics__price{
     position: relative;
-    max-width: 50px; /* subject to change */
+    max-width: 60px; /* subject to change */
     max-height: 24px;
     background: #ffffff;
     font-size: 12px;
