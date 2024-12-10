@@ -4,6 +4,7 @@ import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Profile from "../Profile/Profile.jsx";
 import NavigationPage from "../NavigationPage/NavigationPage.jsx";
+import ComicNaviagtionPage from "../ComicNavigationPage/ComicNavigationPage.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "./App.css";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
@@ -81,6 +82,16 @@ function App() {
             element={
               <NavigationPage
                 handleCharacterSearchResults={handleCharacterSearchResults}
+                handleComicSearchResults={handleComicSearchResults}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
+              />
+            }
+          ></Route>
+          <Route
+            path="/comic-search"
+            element={
+              <ComicNaviagtionPage
                 handleComicSearchResults={handleComicSearchResults}
                 isLoading={isLoading}
                 setIsLoading={setIsLoading}

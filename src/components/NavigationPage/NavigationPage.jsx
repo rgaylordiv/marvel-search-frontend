@@ -17,15 +17,21 @@ export default function NavigationPage({
   const [comicData, setComicData] = useState(null); // Store the search results
   const [characterInfo, setCharacterInfo] = useState(null);
   const [character, setCharacter] = useState("");
+  const [realComic, setRealComic] = useState("");
+  const [comicIssue, setComicIssue] = useState("");
+  const [searchComic, setSearchComic] = useState(null);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     setIsLoading(true);
     getCharacterData();
+    getSearchComic();
   };
 
   const handleChange = (evt) => {
     setCharacter(evt.target.value);
+    setRealComic(evt.target.value);
+    setComicIssue(evt.target.value);
   };
 
   const generateHash = (timeStamp) => {
@@ -38,6 +44,7 @@ export default function NavigationPage({
   const getCharacterData = () => {
     setCharacterInfo(null);
     setComicData(null);
+    setSearchComic(null);
 
     const characterUrl = `https://gateway.marvel.com/v1/public/characters?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${character}&limit=100`;
 
@@ -53,9 +60,11 @@ export default function NavigationPage({
       });
   };
 
-  const getComicData = (characterId) => { // can filter by name but results aren't always accurate to the character chosen
+  const getComicData = (characterId) => {
+    // can filter by name but results aren't always accurate to the character chosen
     setCharacterInfo(null);
     setComicData(null);
+    setSearchComic(null);
     setIsLoading(true);
 
     const comicUrl = `https://gateway.marvel.com/v1/public/characters/${characterId}/comics?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&limit=100`;
@@ -64,6 +73,25 @@ export default function NavigationPage({
       .then((response) => response.json())
       .then((result) => {
         setComicData(result.data || { results: [] });
+        handleComicSearchResults(result.data);
+        console.log(result);
+      })
+      .catch((err) => {
+        console.error("Error message:" + err);
+      });
+  };
+
+  const getSearchComic = () => {
+    setCharacterInfo(null);
+    setComicData(null);
+    setSearchComic(null);
+
+    const searchComicUrl = `https://gateway.marvel.com/v1/public/comics?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${timeStamp}&title=${realComic}}&orderBy=${comicIssue}&limit=100`;
+
+    fetch(searchComicUrl)
+      .then((response) => response.json())
+      .then((result) => {
+        setSearchComic(result.data || { results: [] });
         handleComicSearchResults(result.data);
         console.log(result);
       })
@@ -93,9 +121,12 @@ export default function NavigationPage({
           {characterInfo &&
           characterInfo.results &&
           Array.isArray(characterInfo.results) &&
-          characterInfo.results.length === 0 ? (
+          characterInfo.results.length === 0 
+            ? (
             <div className="navigation__no-results">
-              <p className="navigation__no-results-text">No characters found for your search</p>
+              <p className="navigation__no-results-text">
+                No characters found for your search
+              </p>
             </div>
           ) : (
             characterInfo &&
@@ -109,7 +140,14 @@ export default function NavigationPage({
           {comicData &&
             comicData.results &&
             Array.isArray(comicData.results) &&
-            comicData.results[0] && <ComicCard data={comicData.results} />}
+            comicData.results[0] && <ComicCard data={comicData.results} />
+          }
+
+          {searchComic &&
+            searchComic.results &&
+            Array.isArray(searchComic.results) &&
+            searchComic.results[0] && <ComicCard data={searchComic.results} />
+            }
         </ul>
       )}
     </section>
