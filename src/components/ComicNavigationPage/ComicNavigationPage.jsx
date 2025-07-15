@@ -32,7 +32,7 @@ export default function ComicNaviagtionPage({
       return md5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
     };
   
-    const timeStamp = new Date().getTime();
+    const timeStamp = new Date().getTime().toString();
     const hash = generateHash(timeStamp);
   
     const getSearchComic = () => {
